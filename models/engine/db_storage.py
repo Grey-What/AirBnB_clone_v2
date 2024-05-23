@@ -59,7 +59,7 @@ class DBStorage:
         if cls:
             for inst in self.__session.query(cls).all():
                 inst_dict.update({"{}.{}".format(type(inst).__name__,
-                                                 inst.id,): row})
+                                                 inst.id,): inst})
         else:
             for k, v in classes.items():
                 for inst in self.__session.query(v):
