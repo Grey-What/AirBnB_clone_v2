@@ -23,8 +23,8 @@ class FileStorage:
         if not cls:
             return self.__objects
         elif type(cls) == str:
-            return {key: value for key, value in self.__object.items()
-                    if value.__class__ == cls}
+            return {key: value for key, value in self.__objects.items()
+                    if value.__class__.__name__ == cls}
         else:
             return {key: value for key, value in self.__objects.items()
                     if value.__class__ == cls}
